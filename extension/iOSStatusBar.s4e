@@ -1,0 +1,104 @@
+#
+# Copyright (C) 2001-2011 Ideaworks3D Ltd.
+# All Rights Reserved.
+#
+# This document is protected by copyright, and contains information
+# proprietary to Ideaworks3D.
+# This file consists of source code released by Ideaworks3D under
+# the terms of the accompanying End User License Agreement (EULA).
+# Please do not use this program/source code before you have read the
+# EULA and have agreed to be bound by its terms.
+#
+include:
+
+/**
+ * @addtogroup s3egroup
+ * @{
+ */
+
+/**
+ * @defgroup edkiosstatusbarapigroup iOS Status Bar Extension API Reference
+ *
+ * This extension allows an application to display and manipulate a status bar
+ * on iOS. It uses MTStatusBarOverlay internally, which is included as library
+ * and source with the extension.
+ *
+ * This is an example extension supplied with the EDK. It is included to
+ * demonstrate the implementation of an iOS wrapper API and is not intended
+ * for use in commercial applications.
+ *
+ * @{
+ */
+
+#include "s3eTypes.h"
+
+struct MTStatusBar;
+
+/**
+ * Animation types for the status bar.
+ *
+ * @see CreateMTStatusBar
+ * @par Required Header Files
+ * iOSStatusBar.h
+ */
+typedef enum s3eMTStatusAnimation
+{        
+     s3eMTStatusBarOverlayAnimationNone,     ///< Nothing happens
+     s3eMTStatusBarOverlayAnimationShrink,   ///< The status bar shrinks to the right side and only shows the activity indicator
+     s3eMTStatusBarOverlayAnimationFallDown, ///< The status bar falls down and displays more information
+} s3eMTStatusAnimation;
+
+/**
+ * Mode of the detail view.
+ *
+ * @see CreateMTStatusBar
+ * @par Required Header Files
+ * iOSStatusBar.h
+ */
+typedef enum s3eMTDetailViewMode {
+    s3eMTDetailViewModeHistory,        ///< History of messages is recorded and displayed in detailView
+    s3eMTDetailViewModeDetailText,     ///< A text can be displayed easily
+    s3eMTDetailViewModeCustom          ///< The detailView can be customized in the way the developer wants
+} s3eMTDetailViewMode;
+
+/**
+ * Type of message.
+ *
+ * @see PostMessage
+ * @par Required Header Files
+ * iOSStatusBar.h
+ */
+typedef enum s3eMTMessageType {
+    s3eMTMessageTypeActivity,          ///< Shows activity indicator
+    s3eMTMessageTypeFinish,            ///< Shows checkmark
+    s3eMTMessageTypeError              ///< Shows error-mark
+} s3eMTMessageType;
+
+functions:
+
+/**
+ * Creates an MTStatusBar which is then managed internally and manipulated
+ * via the PostMessage function.
+ *
+ * @param  animation       Animation that happens when the user touches the
+ *                         status bar overlay.
+ * @param  detailViewMode  Type of detail view to use for the status bar.
+ * @par Required Header Files
+ * iOSStatusBar.h
+ */
+void CreateMTStatusBar(s3eMTStatusAnimation animation, s3eMTDetailViewMode detailViewMode) void
+
+/**
+ * Posts a message to the status bar.
+ *
+ * @param  messageType  Type of message to post.
+ * @param  message      String to post in the message.
+ * @param  message      Duration to display the message for.
+ * @par Required Header Files
+ * iOSStatusBar.h
+ */
+void PostMessage(s3eMTMessageType messageType, const char* message, int duration) void
+ 
+append:
+/** @} */
+/** @} */

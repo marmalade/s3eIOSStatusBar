@@ -1,0 +1,15 @@
+#!/usr/bin/env mkb
+# Builder mkb file for the iOSStatusBar extension on iphone
+
+platform IPHONE
+
+options
+{
+    arm
+    lib
+    output-name="lib/iphone/libiOSStatusBar.a"
+    output-name-debug="lib/iphone/libiOSStatusBar_d.a"
+}
+define S3E_BUILD_EXT
+
+subproject iOSStatusBar_build

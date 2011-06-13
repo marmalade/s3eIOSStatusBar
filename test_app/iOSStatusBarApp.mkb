@@ -1,0 +1,8 @@
+#!/usr/bin/env mkb
+subproject ../extension/iOSStatusBar
+
+files
+{
+	["Source"]
+	iOSStatusBarApp.cpp
+}
