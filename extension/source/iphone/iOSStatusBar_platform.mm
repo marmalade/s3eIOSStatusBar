@@ -13,11 +13,9 @@
  * PARTICULAR PURPOSE.
  */
 /*
-iphone-specific implementation of the iOSStatusBar extension.
-Add any platform-specific functionality here.
-*/
-
-/*
+ * iphone-specific implementation of the iOSStatusBar extension.
+ * Add any platform-specific functionality here.
+ *
  * NOTE: This file was originally written by the extension builder, but will not
  * be overwritten (unless --force is specified) and is intended to be modified.
  */
