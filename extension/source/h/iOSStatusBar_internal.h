@@ -13,26 +13,21 @@
  * PARTICULAR PURPOSE.
  */
 /*
-Internal header for the iOSStatusBar extension.
-
-This file should be used for any common function definitions etc that need to
-be shared between the platform-dependent and platform-indepdendent parts of
-this extension.
-*/
-
-/*
+ * Internal header for the iOSStatusBar extension.
+ *
+ * This file should be used for any common function definitions etc that need to
+ * be shared between the platform-dependent and platform-indepdendent parts of
+ * this extension.
+ *
  * NOTE: This file was originally written by the extension builder, but will not
  * be overwritten (unless --force is specified) and is intended to be modified.
  */
-
-
 #ifndef IOSSTATUSBAR_H_INTERNAL
 #define IOSSTATUSBAR_H_INTERNAL
 
 #include "s3eTypes.h"
 #include "iOSStatusBar.h"
 #include "iOSStatusBar_autodefs.h"
-
 
 /**
  * Initialise the extension.  This is called once then the extension is first
@@ -60,5 +55,4 @@ void CreateMTStatusBar_platform(s3eMTStatusAnimation animation, s3eMTDetailViewM
 
 void PostMessage_platform(s3eMTMessageType messageType, const char* message, int duration);
 
-
-#endif /* IOSSTATUSBAR_H_INTERNAL */
+#endif /* !IOSSTATUSBAR_INTERNAL_H */
